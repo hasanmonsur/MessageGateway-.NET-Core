@@ -1,0 +1,72 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Dal\**" />
+    <Content Remove="Dal\**" />
+    <EmbeddedResource Remove="Dal\**" />
+    <None Remove="Dal\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Authorization\AllowAnonymousAttribute.cs" />
+    <Compile Remove="Authorization\AuthorizeAttribute.cs" />
+    <Compile Remove="Authorization\IJwtUtils.cs" />
+    <Compile Remove="Authorization\JwtMiddleware.cs" />
+    <Compile Remove="AuthorizeAttribute.cs" />
+    <Compile Remove="Contracts\IAdminRepository.cs" />
+    <Compile Remove="Contracts\ICbsRepository.cs" />
+    <Compile Remove="Contracts\IRitDataRepository.cs" />
+    <Compile Remove="Contracts\ISecurityHelper.cs" />
+    <Compile Remove="Contracts\ISourceRepository.cs" />
+    <Compile Remove="Helpers\AppException.cs" />
+    <Compile Remove="Helpers\AppSettings.cs" />
+    <Compile Remove="Helpers\ErrorHandlerMiddleware.cs" />
+    <Compile Remove="Helpers\JwtHelper.cs" />
+    <Compile Remove="Helpers\MessageSendModels.cs" />
+    <Compile Remove="Helpers\SecurityHelper.cs" />
+    <Compile Remove="Repository\AdminRepository.cs" />
+    <Compile Remove="Repository\CbsRepository.cs" />
+    <Compile Remove="Repository\RitDataRepository.cs" />
+    <Compile Remove="Repository\SourceRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AspNetCore.Totp" Version="2.3.0" />
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="Dapper" Version="2.1.35" />
+    <PackageReference Include="MassTransit" Version="8.3.4" />
+    <PackageReference Include="MassTransit.AspNetCore" Version="7.3.1" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="8.3.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.11" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Npgsql" Version="9.0.2" />
+    <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="23.7.0" />
+    <PackageReference Include="RabbitMQ.Client" Version="7.0.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="8.0.3" />
+    <PackageReference Include="Serilog.Extensions.Hosting" Version="8.0.0" />
+    <PackageReference Include="Serilog.Extensions.Logging" Version="9.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="7.2.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="9.0.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.3.0" />
+    <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ModelsLibrary\ModelsLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
+</Project>
